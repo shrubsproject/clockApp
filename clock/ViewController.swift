@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  clock
 //
-//  Created by Ilya Egorov on 05.02.2022.
-//
+//  Created by Ilya
 
 import UIKit
 
