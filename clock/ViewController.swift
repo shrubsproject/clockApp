@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  clock
-
+//
 
 import UIKit
 
@@ -11,7 +11,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        // Do any additional setup after loading the view.
+        // Do any additional.
     }
 
 
