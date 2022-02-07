@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  clock
-//000
+//
 
 import UIKit
 import CoreLocation
