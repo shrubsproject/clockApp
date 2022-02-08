@@ -14,7 +14,6 @@
 		076F144727AE959700EB6D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F144527AE959700EB6D20 /* LaunchScreen.storyboard */; };
 		DE9E353027B1510C00087074 /* second.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E352F27B1510C00087074 /* second.swift */; };
 		DE9E353227B1625600087074 /* clockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E353127B1625600087074 /* clockViewModel.swift */; };
-		DE9E353527B1655300087074 /* Circular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9E353427B1655300087074 /* Circular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		076F144827AE959700EB6D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE9E352F27B1510C00087074 /* second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = second.swift; sourceTree = "<group>"; };
 		DE9E353127B1625600087074 /* clockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockViewModel.swift; sourceTree = "<group>"; };
-		DE9E353427B1655300087074 /* Circular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Circular.ttf; path = ../../../../Downloads/font/Circular.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,6 @@
 		DE9E353327B1651100087074 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				DE9E353427B1655300087074 /* Circular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -165,7 +162,6 @@
 			files = (
 				076F144727AE959700EB6D20 /* LaunchScreen.storyboard in Resources */,
 				076F144427AE959700EB6D20 /* Assets.xcassets in Resources */,
-				DE9E353527B1655300087074 /* Circular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
