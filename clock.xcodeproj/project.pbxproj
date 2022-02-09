@@ -12,8 +12,12 @@
 		076F144227AE959200EB6D20 /* clock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 076F144027AE959200EB6D20 /* clock.xcdatamodeld */; };
 		076F144427AE959700EB6D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076F144327AE959700EB6D20 /* Assets.xcassets */; };
 		076F144727AE959700EB6D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F144527AE959700EB6D20 /* LaunchScreen.storyboard */; };
+		DE4B6C4B27B3CD8C00822AFD /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B6C4A27B3CD8C00822AFD /* Animation.swift */; };
+		DE9C8AE027B4016A008B9BD4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */; };
 		DE9E353027B1510C00087074 /* second.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E352F27B1510C00087074 /* second.swift */; };
 		DE9E353227B1625600087074 /* clockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E353127B1625600087074 /* clockViewModel.swift */; };
+		DEC4CFB827B2AA85007AF6D9 /* ClockSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4CFB727B2AA85007AF6D9 /* ClockSwitch.swift */; };
+		DEC4CFBB27B2BA6C007AF6D9 /* clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4CFBA27B2BA6C007AF6D9 /* clock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +28,12 @@
 		076F144327AE959700EB6D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		076F144627AE959700EB6D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		076F144827AE959700EB6D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE4B6C4A27B3CD8C00822AFD /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DE9E352F27B1510C00087074 /* second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = second.swift; sourceTree = "<group>"; };
 		DE9E353127B1625600087074 /* clockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockViewModel.swift; sourceTree = "<group>"; };
+		DEC4CFB727B2AA85007AF6D9 /* ClockSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSwitch.swift; sourceTree = "<group>"; };
+		DEC4CFBA27B2BA6C007AF6D9 /* clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,8 @@
 		076F143627AE959200EB6D20 /* clock */ = {
 			isa = PBXGroup;
 			children = (
-				DE9E353327B1651100087074 /* Fonts */,
+				DEC4CFB927B2BA5E007AF6D9 /* Entity */,
+				DEC4CFB627B2AA76007AF6D9 /* CustomView */,
 				DE9E352C27B1500B00087074 /* Controllers */,
 				DE9E352D27B1501600087074 /* Models */,
 				DE9E352E27B1501F00087074 /* SupportFiles */,
@@ -95,11 +104,22 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		DE9E353327B1651100087074 /* Fonts */ = {
+		DEC4CFB627B2AA76007AF6D9 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				DEC4CFB727B2AA85007AF6D9 /* ClockSwitch.swift */,
+				DE4B6C4A27B3CD8C00822AFD /* Animation.swift */,
+				DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */,
 			);
-			path = Fonts;
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		DEC4CFB927B2BA5E007AF6D9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DEC4CFBA27B2BA6C007AF6D9 /* clock.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				076F143C27AE959200EB6D20 /* ClockViewController.swift in Sources */,
+				DEC4CFBB27B2BA6C007AF6D9 /* clock.swift in Sources */,
+				DE4B6C4B27B3CD8C00822AFD /* Animation.swift in Sources */,
+				DEC4CFB827B2AA85007AF6D9 /* ClockSwitch.swift in Sources */,
+				DE9C8AE027B4016A008B9BD4 /* DateExtension.swift in Sources */,
 				076F143827AE959200EB6D20 /* AppDelegate.swift in Sources */,
 				076F144227AE959200EB6D20 /* clock.xcdatamodeld in Sources */,
 				DE9E353027B1510C00087074 /* second.swift in Sources */,
@@ -315,9 +339,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UJ2FP56Z56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clock/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -329,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Ilya-Egorov.clock";
+				PRODUCT_BUNDLE_IDENTIFIER = .clock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -343,9 +368,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UJ2FP56Z56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clock/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -357,7 +383,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Ilya-Egorov.clock";
+				PRODUCT_BUNDLE_IDENTIFIER = .clock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
