@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+//class clockViewModel{
+//    
+//    var clock: [clock] = .init()
+//}
