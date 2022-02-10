@@ -14,14 +14,14 @@ class ClockViewController: UIViewController {
     let switchButton = UISwitch()
     let clockButton = UIButton()
     let watchButton = UIButton()
+    let plusButton = UIButton()
     let tableView = UITableView(frame: .zero, style: .plain)
-    var item = ["Polomoika", "Golovastik", "Bomj"]
+    var item = ["Polomoika", "Golovastik"]
     var tableViewHeightConstraint: NSLayoutConstraint!
     
     var clockView: AnalogClockView {
-        let view = AnalogClockView(frame: CGRect(x: -41, y: 65, width: 480, height: 465))
+        let view = AnalogClockView(frame: CGRect(x: -27, y: 100, width: 450, height: 450))
         return view
-        
     }
     
     var location: CLLocation!
@@ -35,7 +35,7 @@ class ClockViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell") //  Необходимо продумать представление(сохранение времени, когда)
+        tableView.register(table.self, forCellReuseIdentifier: "cell") //  Необходимо продумать представление(сохранение времени, когда)
     }
     
     func configureUI() {
@@ -45,6 +45,7 @@ class ClockViewController: UIViewController {
         view.addSubview(watchButton)
         view.addSubview(tableView)
         view.addSubview(imageView)
+        view.addSubview(plusButton)
         self.view.addSubview(clockView)
         
         view.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
@@ -58,12 +59,15 @@ class ClockViewController: UIViewController {
 
         watchButton.setImage(UIImage(named: "watch"), for: .normal)
         watchButton.addTarget(self, action: #selector(watchTap), for: .touchUpInside)
-
-        tableView.backgroundColor = UIColor.white
-        tableView.separatorColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
-        tableView.separatorStyle = .singleLine
-        tableView.allowsSelection = false
         
+        plusButton.setImage(UIImage(named: "plus"), for: .normal)
+        plusButton.addTarget(self, action: #selector(plus), for: .touchUpOutside)
+
+        tableView.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
+
+        tableView.separatorColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
 
     }
     
@@ -74,11 +78,15 @@ class ClockViewController: UIViewController {
         clockButton.translatesAutoresizingMaskIntoConstraints = false
         watchButton.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        plusButton.translatesAutoresizingMaskIntoConstraints = false
         tableViewHeightConstraint = tableView.heightAnchor.constraint(equalToConstant: 130)
 
         NSLayoutConstraint.activate([
             headerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.headerLabelWidth),
             headerLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.leadingLabel),
+            
+            plusButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            plusButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -Constants.righPlusButton),
 
             clockButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.clockButtonWidth),
             clockButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Constants.leftClockButton),
@@ -90,8 +98,6 @@ class ClockViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.leadingTableView),
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
     
@@ -102,6 +108,10 @@ class ClockViewController: UIViewController {
     @objc func watchTap() {
         
     }
+    
+    @objc func plus() {
+    
+    }
 }
 
 extension ClockViewController: UITableViewDelegate, UITableViewDataSource{
@@ -111,9 +121,15 @@ extension ClockViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! table
         cell.textLabel!.text = self.item[indexPath.row]
         cell.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
+        
+        cell.layer.shadowColor = UIColor(red: 0.37, green: 0.52, blue: 0.67, alpha: 0.8).cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.shadowRadius = 2
+        cell.layer.shadowOpacity = 0.6
+        cell.layer.cornerRadius = 25
 
         let switchView = UISwitch(frame: .zero)
         switchView.setOn(false, animated: true)
@@ -134,19 +150,24 @@ extension ClockViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You select Index")
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            Constants.cellHigh
+        }
 }
 
 extension ClockViewController{
     enum Constants{
         static let headerLabelWidth: CGFloat = 15.0
         static let leadingLabel: CGFloat = 40.0
-        static let clockButtonWidth: CGFloat = 17.0
-        static let leftClockButton: CGFloat = 25.0
+        static let clockButtonWidth: CGFloat = 0.0
+        static let leftClockButton: CGFloat = 10.0
         static let watchButtonWidth: CGFloat = 0.0
         static let rightWatchButton: CGFloat = 10.0
+        static let righPlusButton: CGFloat = 10.0
         static let tableViewWidth: CGFloat = 100.0
-        static let leadingTableView: CGFloat = 10.0
-        static let imageWidth: CGFloat = 35.0
-        static let leftImage: CGFloat = 14.0
+        static let leadingTableView: CGFloat = 15.0
+        static let cellHigh: CGFloat = 55.0
+        
     }
 }
