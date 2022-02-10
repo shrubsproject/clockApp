@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 class AnalogClockView: UIView {
-    
+
     struct Clock {
         private init() {}
         struct HandAngle {
@@ -19,9 +19,9 @@ class AnalogClockView: UIView {
         }
         struct HandWidth {
             private init() {}
-            static let hour: CGFloat = 8
-            static let minute: CGFloat = 5
-            static let second: CGFloat = 3
+            static let hour: CGFloat = 5
+            static let minute: CGFloat = 3
+            static let second: CGFloat = 2
         }
         struct AnimationKey {
             private init() {}
@@ -37,6 +37,7 @@ class AnalogClockView: UIView {
     typealias AnimationKey = Clock.AnimationKey
     
     var hourLayer:CALayer!
+    var dotLayer: CALayer!
     var minuteLayer:CALayer!
     var secondLayer:CALayer!
     var imageLayer:CALayer!
@@ -53,7 +54,6 @@ class AnalogClockView: UIView {
         return self.frame.height/2
     }
     
-    //MARK: Init methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpAnalogClock()
@@ -65,7 +65,7 @@ class AnalogClockView: UIView {
 }
 
 extension AnalogClockView {
-    //MARK: Internal methods
+    
     func setUpAnalogClock() {
         self.layer.addSublayer(clockLayer)
         setUpLayer()
@@ -76,6 +76,7 @@ extension AnalogClockView {
         addHourLayer()
         addMinuteLayer()
         addSecondsLayer()
+        addDot()
     }
     func setUpAniation() {
         secondLayerAnimation()
@@ -92,7 +93,9 @@ extension AnalogClockView {
         layer.position = CGPoint(x: xPosition, y: yPosition)
         layer.bounds = frame
         layer.contents = contents
+        layer.cornerRadius = 3
         return layer
+        
     }
     func setUpLayerAnimation(keyPath: String = AnimationKey.path, repeatCount: Float = .infinity, duration: CFTimeInterval, isRemovedOnCompletion: Bool, timingFunction: CAMediaTimingFunction?, fromValue: Any?, byValue: Any?) -> CABasicAnimation {
         let animation = CABasicAnimation()
@@ -110,26 +113,34 @@ extension AnalogClockView {
 extension AnalogClockView {
     func addImageLayer() {
         let width = ((self.frame.width/2)-20)*2
-        imageLayer = setUpLayer(backgroundColor: .clear, anchorPointX: 0.5, anchorPointY: 0.5, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: width, height: width), contents: UIImage(named: "ClockFace.jpg")?.cgImage)
+        imageLayer = setUpLayer(backgroundColor: .clear, anchorPointX: 0.5, anchorPointY: 0.5, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: width, height: width), contents: UIImage(named: "Big")?.cgImage)
         layer.addSublayer(imageLayer)
     }
+    
+    func addDot() {
+        dotLayer = setUpLayer(backgroundColor: .clear, anchorPointX: 0.5, anchorPointY: 0.5, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: 39, height: 39), contents: UIImage(named: "dot")?.cgImage)
+        layer.addSublayer(dotLayer)
+    }
+    
     func addHourLayer() {
-        hourLayer = setUpLayer(backgroundColor: .black, anchorPointX: 0.5, anchorPointY: 0, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: HandWidth.hour, height: (self.frame.width/2)-(self.frame.width * 0.7)), contents: nil)
+        hourLayer = setUpLayer(backgroundColor: UIColor(red: 0.37, green: 0.52, blue: 0.67, alpha: 0.8), anchorPointX: 0.5, anchorPointY: 0, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: HandWidth.hour, height: (self.frame.width/2)-(self.frame.width * 0.7)), contents: nil)
         hourLayer.transform = CATransform3DMakeRotation(Angle.hour/CGFloat(180*Double.pi), 0, 0, 1)
         layer.addSublayer(hourLayer)
         
     }
     func addMinuteLayer() {
-        minuteLayer = setUpLayer(backgroundColor: .black, anchorPointX: 0.5, anchorPointY: 0, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: HandWidth.minute, height: (self.frame.width/2)-(self.frame.width * 0.8)), contents: nil)
+        minuteLayer = setUpLayer(backgroundColor: UIColor(red: 0.37, green: 0.52, blue: 0.67, alpha: 0.8), anchorPointX: 0.5, anchorPointY: 0, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: HandWidth.minute * 1.2, height: (self.frame.width/2)-(self.frame.width * 0.8)), contents: nil)
         minuteLayer.transform = CATransform3DMakeRotation(Angle.minute/CGFloat(180*Double.pi), 0, 0, 1)
         layer.addSublayer(minuteLayer)
     }
     func addSecondsLayer() {
-        secondLayer = setUpLayer(backgroundColor: .red, anchorPointX: 0.5, anchorPointY: 0, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: HandWidth.second, height: (self.frame.width/2)-(self.frame.width * 0.1)), contents: nil)
+        secondLayer = setUpLayer(backgroundColor: UIColor(red: 0.97, green: 0.27, blue: 0.36, alpha: 1), anchorPointX: 0.5, anchorPointY: 0, xPosition: layerXPosition, yPosition: layerYPosition, frame: CGRect(x: 0, y: 0, width: HandWidth.second * 1.9, height: (self.frame.width/2)-(self.frame.width * 0.18)), contents: nil)
         secondLayer.transform = CATransform3DMakeRotation(Angle.second/CGFloat(180*Double.pi), 0, 0, 1)
         layer.addSublayer(secondLayer)
     }
 }
+    
+
 
 extension AnalogClockView {
     func secondLayerAnimation() {

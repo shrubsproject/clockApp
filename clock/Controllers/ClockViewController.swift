@@ -2,7 +2,8 @@
 //  ViewController.swift
 //  clock
 //
-
+//
+//
 import UIKit
 import CoreLocation
 
@@ -18,9 +19,9 @@ class ClockViewController: UIViewController {
     var tableViewHeightConstraint: NSLayoutConstraint!
     
     var clockView: AnalogClockView {
-        let view = AnalogClockView(frame: CGRect(x: 0, y: 0, width: 450, height: 350))
-        view.center = self.view.center
+        let view = AnalogClockView(frame: CGRect(x: -41, y: 65, width: 480, height: 465))
         return view
+        
     }
     
     var location: CLLocation!
@@ -29,17 +30,12 @@ class ClockViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addClock()
         configureUI()
         configureLayout()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell") //  Необходимо продумать представление(сохранение времени, когда)
-    }
-    
-    func addClock() {
-        self.view.addSubview(clockView)
     }
     
     func configureUI() {
@@ -49,6 +45,7 @@ class ClockViewController: UIViewController {
         view.addSubview(watchButton)
         view.addSubview(tableView)
         view.addSubview(imageView)
+        self.view.addSubview(clockView)
         
         view.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
 
@@ -66,8 +63,8 @@ class ClockViewController: UIViewController {
         tableView.separatorColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
         tableView.separatorStyle = .singleLine
         tableView.allowsSelection = false
+        
 
-        imageView.image = UIImage(named: "Big")
     }
     
     func configureLayout() {
@@ -89,12 +86,12 @@ class ClockViewController: UIViewController {
             watchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Constants.watchButtonWidth),
             watchButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -Constants.rightWatchButton),
 
-            tableView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Constants.tableViewWidth), tableViewHeightConstraint,
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.tableViewWidth), tableViewHeightConstraint,
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.leadingTableView),
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            imageView.topAnchor.constraint(equalTo: headerLabel.topAnchor, constant: Constants.imageWidth),
-            imageView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Constants.leftImage)
+            imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
     
@@ -147,9 +144,9 @@ extension ClockViewController{
         static let leftClockButton: CGFloat = 25.0
         static let watchButtonWidth: CGFloat = 0.0
         static let rightWatchButton: CGFloat = 10.0
-        static let tableViewWidth: CGFloat = 25.0
+        static let tableViewWidth: CGFloat = 100.0
         static let leadingTableView: CGFloat = 10.0
         static let imageWidth: CGFloat = 35.0
-        static let leftImage: CGFloat = 22.0
+        static let leftImage: CGFloat = 14.0
     }
 }
