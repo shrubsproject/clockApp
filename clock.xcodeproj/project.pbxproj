@@ -13,6 +13,7 @@
 		076F144427AE959700EB6D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076F144327AE959700EB6D20 /* Assets.xcassets */; };
 		076F144727AE959700EB6D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F144527AE959700EB6D20 /* LaunchScreen.storyboard */; };
 		DE4B6C4B27B3CD8C00822AFD /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B6C4A27B3CD8C00822AFD /* Animation.swift */; };
+		DE7E762327B5487300A20BC6 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E762227B5487300A20BC6 /* Table.swift */; };
 		DE9C8AE027B4016A008B9BD4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */; };
 		DE9E353027B1510C00087074 /* second.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E352F27B1510C00087074 /* second.swift */; };
 		DE9E353227B1625600087074 /* clockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E353127B1625600087074 /* clockViewModel.swift */; };
@@ -29,6 +30,7 @@
 		076F144627AE959700EB6D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		076F144827AE959700EB6D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE4B6C4A27B3CD8C00822AFD /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		DE7E762227B5487300A20BC6 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DE9E352F27B1510C00087074 /* second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = second.swift; sourceTree = "<group>"; };
 		DE9E353127B1625600087074 /* clockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockViewModel.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				DEC4CFB727B2AA85007AF6D9 /* ClockSwitch.swift */,
 				DE4B6C4A27B3CD8C00822AFD /* Animation.swift */,
 				DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */,
+				DE7E762227B5487300A20BC6 /* Table.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				DEC4CFB827B2AA85007AF6D9 /* ClockSwitch.swift in Sources */,
 				DE9C8AE027B4016A008B9BD4 /* DateExtension.swift in Sources */,
 				076F143827AE959200EB6D20 /* AppDelegate.swift in Sources */,
+				DE7E762327B5487300A20BC6 /* Table.swift in Sources */,
 				076F144227AE959200EB6D20 /* clock.xcdatamodeld in Sources */,
 				DE9E353027B1510C00087074 /* second.swift in Sources */,
 				DE9E353227B1625600087074 /* clockViewModel.swift in Sources */,
