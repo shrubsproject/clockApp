@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  clock
 //
-//
-//
+
 import UIKit
 import CoreLocation
 
@@ -22,6 +21,7 @@ class ClockViewController: UIViewController {
     var clockView: AnalogClockView {
         let view = AnalogClockView(frame: CGRect(x: -27, y: 100, width: 450, height: 450))
         return view
+
     }
     
     var location: CLLocation!
