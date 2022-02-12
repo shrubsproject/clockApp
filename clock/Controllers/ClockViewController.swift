@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class ClockViewController: UIViewController {
 
@@ -17,16 +16,13 @@ class ClockViewController: UIViewController {
     let tableView = UITableView(frame: .zero, style: .plain)
     var item = ["Polomoika", "Golovastik"]
     var tableViewHeightConstraint: NSLayoutConstraint!
+    var location = LocationManager()
     
     var clockView: AnalogClockView {
         let view = AnalogClockView(frame: CGRect(x: -27, y: 100, width: 450, height: 450))
         return view
 
     }
-    
-    var location: CLLocation!
-//    var forecast: Forecast?
-    var placemark: CLPlacemark?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,3 +167,4 @@ extension ClockViewController{
         
     }
 }
+
