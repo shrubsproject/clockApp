@@ -19,6 +19,10 @@
 		DE9E353227B1625600087074 /* clockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E353127B1625600087074 /* clockViewModel.swift */; };
 		DEC4CFB827B2AA85007AF6D9 /* ClockSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4CFB727B2AA85007AF6D9 /* ClockSwitch.swift */; };
 		DEC4CFBB27B2BA6C007AF6D9 /* clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4CFBA27B2BA6C007AF6D9 /* clock.swift */; };
+		DECC0B1D27B7B04000D99216 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC0B1C27B7B04000D99216 /* LocationManager.swift */; };
+		DECC0B1F27B7B42000D99216 /* GettingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC0B1E27B7B42000D99216 /* GettingLocation.swift */; };
+		DECC0B2127B7B70400D99216 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC0B2027B7B70400D99216 /* WeatherManager.swift */; };
+		DECC0B2327B7C07200D99216 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC0B2227B7C07200D99216 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		DE9E353127B1625600087074 /* clockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockViewModel.swift; sourceTree = "<group>"; };
 		DEC4CFB727B2AA85007AF6D9 /* ClockSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSwitch.swift; sourceTree = "<group>"; };
 		DEC4CFBA27B2BA6C007AF6D9 /* clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clock.swift; sourceTree = "<group>"; };
+		DECC0B1C27B7B04000D99216 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DECC0B1E27B7B42000D99216 /* GettingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingLocation.swift; sourceTree = "<group>"; };
+		DECC0B2027B7B70400D99216 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		DECC0B2227B7C07200D99216 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,8 @@
 				076F144327AE959700EB6D20 /* Assets.xcassets */,
 				076F144527AE959700EB6D20 /* LaunchScreen.storyboard */,
 				076F143727AE959200EB6D20 /* AppDelegate.swift */,
+				DECC0B1C27B7B04000D99216 /* LocationManager.swift */,
+				DECC0B2027B7B70400D99216 /* WeatherManager.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -113,6 +123,8 @@
 				DE4B6C4A27B3CD8C00822AFD /* Animation.swift */,
 				DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */,
 				DE7E762227B5487300A20BC6 /* Table.swift */,
+				DECC0B1E27B7B42000D99216 /* GettingLocation.swift */,
+				DECC0B2227B7C07200D99216 /* Weather.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -198,6 +210,10 @@
 				076F143C27AE959200EB6D20 /* ClockViewController.swift in Sources */,
 				DEC4CFBB27B2BA6C007AF6D9 /* clock.swift in Sources */,
 				DE4B6C4B27B3CD8C00822AFD /* Animation.swift in Sources */,
+				DECC0B1F27B7B42000D99216 /* GettingLocation.swift in Sources */,
+				DECC0B2127B7B70400D99216 /* WeatherManager.swift in Sources */,
+				DECC0B1D27B7B04000D99216 /* LocationManager.swift in Sources */,
+				DECC0B2327B7C07200D99216 /* Weather.swift in Sources */,
 				DEC4CFB827B2AA85007AF6D9 /* ClockSwitch.swift in Sources */,
 				DE9C8AE027B4016A008B9BD4 /* DateExtension.swift in Sources */,
 				076F143827AE959200EB6D20 /* AppDelegate.swift in Sources */,
