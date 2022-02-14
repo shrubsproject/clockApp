@@ -23,6 +23,7 @@
 		07A0470527B7FEBC005072F7 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0470427B7FEBC005072F7 /* userInfo.swift */; };
 		07A0470727B7FEF2005072F7 /* celsius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0470627B7FEF2005072F7 /* celsius.swift */; };
 		DE4B6C4B27B3CD8C00822AFD /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B6C4A27B3CD8C00822AFD /* Animation.swift */; };
+		DE6A515D27BA5ECB00937AAE /* AlarmController .swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A515C27BA5ECB00937AAE /* AlarmController .swift */; };
 		DE7E762327B5487300A20BC6 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E762227B5487300A20BC6 /* Table.swift */; };
 		DE9C8AE027B4016A008B9BD4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */; };
 		DE9E353027B1510C00087074 /* second.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E352F27B1510C00087074 /* second.swift */; };
@@ -48,6 +49,7 @@
 		07A0470427B7FEBC005072F7 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		07A0470627B7FEF2005072F7 /* celsius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celsius.swift; sourceTree = "<group>"; };
 		DE4B6C4A27B3CD8C00822AFD /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		DE6A515C27BA5ECB00937AAE /* AlarmController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmController .swift"; sourceTree = "<group>"; };
 		DE7E762227B5487300A20BC6 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		DE9C8ADF27B4016A008B9BD4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DE9E352F27B1510C00087074 /* second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = second.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				076F143B27AE959200EB6D20 /* ClockViewController.swift */,
+				DE6A515C27BA5ECB00937AAE /* AlarmController .swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6A515D27BA5ECB00937AAE /* AlarmController .swift in Sources */,
 				076F143C27AE959200EB6D20 /* ClockViewController.swift in Sources */,
 				07A046F227B7FAB2005072F7 /* apiError.swift in Sources */,
 				07A046F827B7FB4D005072F7 /* baseURL.swift in Sources */,
@@ -386,7 +390,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UJ2FP56Z56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clock/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -415,7 +419,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UJ2FP56Z56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clock/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
