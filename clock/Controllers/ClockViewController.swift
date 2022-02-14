@@ -132,11 +132,11 @@ extension ClockViewController: UITableViewDelegate, UITableViewDataSource{
         cell.textLabel!.text = self.item[indexPath.row]
         cell.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
         
-        cell.layer.shadowColor = UIColor(red: 0.37, green: 0.52, blue: 0.67, alpha: 0.8).cgColor
+        cell.layer.shadowColor = UIColor(red: 0.37, green: 0.52, blue: 0.67, alpha: 0.4).cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2)
-        cell.layer.shadowRadius = 2
-        cell.layer.shadowOpacity = 0.6
-        cell.layer.cornerRadius = 25
+        cell.layer.shadowRadius = 3
+        cell.layer.shadowOpacity = 0.8
+        cell.layer.cornerRadius = 16
 
         let switchView = UISwitch(frame: .zero)
         switchView.setOn(false, animated: true)
@@ -173,8 +173,8 @@ extension ClockViewController{
         static let rightWatchButton: CGFloat = 10.0
         static let righPlusButton: CGFloat = 10.0
         static let tableViewWidth: CGFloat = 100.0
-        static let leadingTableView: CGFloat = 15.0
-        static let cellHigh: CGFloat = 55.0
+        static let leadingTableView: CGFloat = 4.0
+        static let cellHigh: CGFloat = 63.0
     }
 }
 
