@@ -16,7 +16,6 @@ class ClockViewController: UIViewController {
     let tableView = UITableView(frame: .zero, style: .plain)
     var item = ["Polomoika", "Golovastik"]
     var tableViewHeightConstraint: NSLayoutConstraint!
-    var location = LocationManager()
     
     var clockView: AnalogClockView {
         let view = AnalogClockView(frame: CGRect(x: -27, y: 100, width: 450, height: 450))
@@ -34,6 +33,17 @@ class ClockViewController: UIViewController {
         tableView.register(table.self, forCellReuseIdentifier: "cell") //  Необходимо продумать представление(сохранение времени, когда)
     }
     
+    var weatherDetailData: WeatherInfo? {
+            didSet{
+                guard let speed = weatherDetailData?.wind.speed,
+                    let humidity = weatherDetailData?.main.humidity else {
+                    return
+                }
+                headerLabel.text = "\(speed)"
+                headerLabel.text = "\(humidity)"
+            }
+        }
+    
     func configureUI() {
 
         view.addSubview(headerLabel)
@@ -46,8 +56,9 @@ class ClockViewController: UIViewController {
         
         view.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
 
+      
         headerLabel.font = UIFont.systemFont(ofSize: 35)
-        headerLabel.text = "Clock"
+        
         headerLabel.textColor = UIColor(red: 0.192, green: 0.271, blue: 0.416, alpha: 1)
 
         clockButton.setImage(UIImage(named: "clock"), for: .normal)
@@ -164,7 +175,6 @@ extension ClockViewController{
         static let tableViewWidth: CGFloat = 100.0
         static let leadingTableView: CGFloat = 15.0
         static let cellHigh: CGFloat = 55.0
-        
     }
 }
 
