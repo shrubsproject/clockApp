@@ -139,8 +139,6 @@ extension AnalogClockView {
         layer.addSublayer(secondLayer)
     }
 }
-    
-
 
 extension AnalogClockView {
     func secondLayerAnimation() {

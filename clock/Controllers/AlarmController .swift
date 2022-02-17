@@ -32,9 +32,7 @@ class alarmController: UIViewController{
         datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
         
         saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
-    
         datePicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
-        
     }
     
     func configureLayout() {
