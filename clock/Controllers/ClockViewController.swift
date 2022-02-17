@@ -2,6 +2,7 @@
 //  ViewController.swift
 //  clock
 //
+//
 
 import UIKit
 
@@ -14,13 +15,11 @@ class ClockViewController: UIViewController {
     let watchButton = UIButton()
     let plusButton = UIButton()
     let tableView = UITableView(frame: .zero, style: .plain)
-    var item = ["18:15 pm", "19:20 pm"]
     var tableViewHeightConstraint: NSLayoutConstraint!
     
     var clockView: AnalogClockView {
         let view = AnalogClockView(frame: CGRect(x: -27, y: 100, width: 450, height: 450))
         return view
-
     }
     
     override func viewDidLoad() {
@@ -32,17 +31,6 @@ class ClockViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(table.self, forCellReuseIdentifier: "cell") //  Необходимо продумать представление(сохранение времени, когда)
     }
-    
-    var weatherDetailData: WeatherInfo? {
-            didSet{
-                guard let speed = weatherDetailData?.wind.speed,
-                    let humidity = weatherDetailData?.main.humidity else {
-                    return
-                }
-                headerLabel.text = "\(speed)"
-                headerLabel.text = "\(humidity)"
-            }
-        }
     
     func configureUI() {
 
@@ -74,7 +62,6 @@ class ClockViewController: UIViewController {
         tableView.separatorColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
-
     }
     
     func configureLayout() {
@@ -151,11 +138,10 @@ extension ClockViewController: UITableViewDelegate, UITableViewDataSource{
         cell.accessoryView = switchView
 
         return cell
-        
     }
     
     @objc func switchChanged(_ sender : UISwitch!){
-
+        
           print("table row switch Changed \(sender.tag)")
           print("The switch is \(sender.isOn ? "ON" : "OFF")")
         }
