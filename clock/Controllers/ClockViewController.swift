@@ -14,7 +14,7 @@ class ClockViewController: UIViewController {
     let watchButton = UIButton()
     let plusButton = UIButton()
     let tableView = UITableView(frame: .zero, style: .plain)
-    var item = ["Polomoika", "Golovastik"]
+    var item = ["18:15 pm", "19:20 pm"]
     var tableViewHeightConstraint: NSLayoutConstraint!
     
     var clockView: AnalogClockView {
@@ -55,7 +55,6 @@ class ClockViewController: UIViewController {
         self.view.addSubview(clockView)
         
         view.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
-
       
         headerLabel.font = UIFont.systemFont(ofSize: 35)
         
@@ -68,7 +67,7 @@ class ClockViewController: UIViewController {
         watchButton.addTarget(self, action: #selector(watchTap), for: .touchUpInside)
         
         plusButton.setImage(UIImage(named: "plus"), for: .normal)
-        plusButton.addTarget(self, action: #selector(plus), for: .touchUpOutside)
+        plusButton.addTarget(self, action: #selector(plus), for: .touchUpInside)
 
         tableView.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
 
@@ -103,8 +102,7 @@ class ClockViewController: UIViewController {
 
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.tableViewWidth), tableViewHeightConstraint,
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.leadingTableView),
-            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-
+            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -117,7 +115,15 @@ class ClockViewController: UIViewController {
     }
     
     @objc func plus() {
-    
+        let viewControllerToPresent = alarmController()
+        if let sheet = viewControllerToPresent.sheetPresentationController{
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        present(viewControllerToPresent, animated: true, completion: nil)
     }
 }
 

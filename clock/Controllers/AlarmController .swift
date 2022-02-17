@@ -12,10 +12,8 @@ class alarmController: UIViewController{
     
     let saveButton = UIButton()
     let datePicker = UIDatePicker()
-    var date = Date()
     let textL = UILabel()
     let formatter = DateFormatter()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +29,11 @@ class alarmController: UIViewController{
         view.backgroundColor = UIColor(red: 0.89, green: 0.929, blue: 0.969, alpha: 1)
         
         saveButton.setImage(UIImage(named: "save"), for: .normal)
-        datePicker.preferredDatePickerStyle = UIDatePickerStyle.inline
+        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
         
-        saveButton.addTarget(self, action: #selector(save), for: .touchUpOutside)
+        saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
     
         datePicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
-        
         
     }
     
@@ -48,7 +45,7 @@ class alarmController: UIViewController{
         
         NSLayoutConstraint.activate([
             datePicker.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            datePicker.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -150.0),
+            datePicker.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -50.0),
             datePicker.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 25.0),
             datePicker.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -25.0),
             
@@ -56,7 +53,7 @@ class alarmController: UIViewController{
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15.0),
           
             textL.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            textL.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -250.0)
+            textL.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -125.0)
         ])
     }
     
@@ -65,9 +62,10 @@ class alarmController: UIViewController{
     }
     
     @objc func dateChange() {
-        formatter.dateFormat = "dd/MM/yyyy/HH:mm:mm"
+        formatter.dateFormat = "dd/MM/yyyy/HH:mm"
         formatter.dateStyle = .full
         formatter.timeStyle = .short
         textL.text = formatter.string(from: datePicker.date)
+        textL.font = UIFont.systemFont(ofSize: 19)
     }
 }
